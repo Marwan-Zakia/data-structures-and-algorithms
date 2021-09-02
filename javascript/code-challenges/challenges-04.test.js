@@ -48,13 +48,8 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  arr.sort=(a,b)=>{
- if (a.toLowerCase() < b.toLowerCase()) {
-  return -1; 
-} else { 
-  return 1;
-}
-}
+ return arr.sort()
+
 }
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -96,22 +91,14 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  arr.sort((a,b) => {
-    if (a> b){
-      return -1;
-    }
-     else 
-     {
-       return 1;
-     }
-     
- });
+  return  arr.sort((a,b) =>  a > b ?  1 :  -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
+Write a function named sortByPrice that takes in an array of objects, each of which has a 
+'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -123,18 +110,22 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  return  arr.sort((a,b) =>  a.price > b.price ?  1 :  -1)
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named alphabetizeBetter that takes in an array of strings and returns the same array, with the strings sorted alphabetically. Capitalization should not change the sort order of two strings.
+Write a function named alphabetizeBetter that takes in an array of strings and returns the same array,
+ with the strings sorted alphabetically. Capitalization should not change the sort order of two strings.
 
-For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
+For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is
+ ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  return  (arr.sort((a,b) =>  a < b ?  1 :  -1).toUpperCase);
 };
 
 /* ------------------------------------------------------------------------------------------------
