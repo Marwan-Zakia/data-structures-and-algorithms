@@ -26,17 +26,24 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  
+
+  return starWarsArr.sort((a, b) => parseInt((b.height) - (a.height)));
+
+
+
 }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
+Write a function named removeThree that takes an index and an array.
+ The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx, 3);
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,6 +54,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
+  return arr.join(' ')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +64,8 @@ Write a function named howMuchPencil that takes in a string, as written on the s
 
 As you sharpen the pencil, the string will become shorter and shorter, starting by removing the first letter.
 
-Your function should use slice within a loop and return an array of each successive string result from losing letters to the sharpener, until nothing is left.
+Your function should use slice within a loop and return an array of each successive string
+ result from losing letters to the sharpener, until nothing is left.
 
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
@@ -65,6 +74,11 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for (let i = 0; i < str.length; i++) {
+    result.push(str.slice(i))
+
+  }
+  result.push('')
   return result;
 };
 
@@ -78,15 +92,18 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
+You are making a grocery list for ingredients needed in the gruffalo crumble recipe,
+ below. Rather than taking the entire recipe, you only want a list of the item names.
 
-Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+Write a function named listFoods that takes in the recipe and returns a new array of
+ the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
@@ -125,6 +142,9 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.map(item => {
+  })
+
   return result;
 };
 
@@ -161,7 +181,8 @@ const stepActions = (recipe) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
+Write a function named removeEvenValues that, given an array of integers as input, deletes all even 
+values from the array, leaving no 'gaps' behind.
 
 The array should be modified in-place.
 
@@ -173,16 +194,21 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
+Write a function named removeLastCharacters that takes in a string and a number.
+ The numberOfCharacters argument determines how many characters will be removed from
+  the end of the string. Return the resulting string.
 
-If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
+If the numberOfCharacters argument is greater than the length of the input string,
+ the function should return an empty string.
 
-If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
+If the numberOfCharacters argument input is a negative number, the function should 
+return the input string without any changes.
 
 For example:
 removeLastCharacters('Gregor', 2) returns 'Greg'
