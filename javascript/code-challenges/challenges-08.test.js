@@ -72,8 +72,8 @@ Write a function named containsW that takes in a string
 
 const containsW = (str) => {
   // Solution code here...
-  let regex=/w/;
-  return regex.test(str)
+  let reg=/w/;
+  return reg.test(str)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,8 +92,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  let regex=/[0-9]/;
-  return regex.test(input)
+  let reg=/[0-9]/;
+  return reg.test(input)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,8 +108,8 @@ regular expression pattern to return true if the input contains
 
 const containsWorld = (input) => {
   // Solution code here...
-  let regex=/world/;
-  return regex.test(input)
+  let reg=/world/;
+  return reg.test(input)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,8 +126,8 @@ Return an array containing all the matches.
 const isCapitalized = (str) => {
   // Solution code here...
   let pattern=/[A-Z][a-z]*/g;
-  let regex=str.match(pattern)
-  return regex || []
+  let reg=str.match(pattern)
+  return reg || []
 
 };
 
