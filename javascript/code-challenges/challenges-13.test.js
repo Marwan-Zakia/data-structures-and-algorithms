@@ -83,14 +83,13 @@ a Boolean indicating whether all those strings contain ":)".
 
 const allHappy = (arr) => {
   // Solution code here...
+  let newbolen = true;
   arr.map(item => {
-    if ((item.includes(':)'))) {
-      return true;
-    }
-    else {
-      return false;
+    if (!(item.includes(":)"))) {
+      newbolen = false;
     }
   });
+  return newbolen
 
 
 };

@@ -142,9 +142,6 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  recipe.ingredients.map(item => {
-  })
-
   return result;
 };
 

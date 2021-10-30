@@ -93,6 +93,16 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let newArr =[]
+  input.forEach((element) => {
+  let newARRay=[];
+  element.filter(item =>{
+  if(typeof item=='number'&&item %5==0){newARRay.push(2**item)}
+  
+  })
+  newArr.push(newARRay)
+  })
+  return newArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,6 +171,14 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here..
+  let newArr=[];
+  data.filter((item)=>{
+  if(item.gender === 'male'||item.gender ==='female'){
+  newArr.push(item.name)
+  }
+  
+  })
+  return newArr.join(' and ')
 };
 
 /* ------------------------------------------------------------------------------------------------
