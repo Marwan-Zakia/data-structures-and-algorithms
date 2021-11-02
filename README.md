@@ -22,6 +22,9 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-| Reverse-an-Array       |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
-| array-shift       |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
-| array-binary-search        |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
+| Reverse-an-Array       |    [link](https://marwan-zakia.github.io/data-structures-and-algorithms/Reverse-an-Array.md)     |
+| OR Reverse-an-Array       |   [link](https://github.com/Marwan-Zakia/data-structures-and-algorithms/blob/main/Reverse-an-Array.md)  |
+| array-shift       |    [link](https://marwan-zakia.github.io/data-structures-and-algorithms/array-shift.md)     |
+| OR array-shift       |    [link](https://github.com/Marwan-Zakia/data-structures-and-algorithms/blob/main/array-shift.md)     |
+| array-binary-search        |    [link](https://marwan-zakia.github.io/data-structures-and-algorithms/array-binary-search.md)     |
+| OR array-binary-search       |    [link](https://github.com/Marwan-Zakia/data-structures-and-algorithms/blob/main/array-binary-search.md)     |
