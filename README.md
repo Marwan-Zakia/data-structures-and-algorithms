@@ -22,39 +22,6 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-#### array-shift
-write a function called insert shift array that adds a new item in the middle of the array without removing 
-any elements of the array
-
-
-#### Whiteboard Process
-![array-shift](array-shift.png)
-
-#### Approach & Efficiency
-I think my method is one better ways to implement to to mutiple array in a dynamic way the method 
-
-//declare a new array 
-
-
-// declare a variable that's called half that
-takes half of the array 
-
-
-// declere a variable thats called ceil uses half of the array makes it with no integers 
-
-
-// do a for loop and an if the itirator equales 
-the the ceil then push the item and the array items 
-
------------------------------
-#### Reverse an Array
-create a function that accepts an array then reverses it so the first item becomes the last item 
-
-#### Whiteboard Process
-![array-reverse](array-reverse.png)
-#### Approach & Efficiency
-//  i declared a new array 
-// did a for loop and made the array length -1 so the loop starts from the first item of the array and equalize it with the iterator (i)
-// then make the i bigger than -1  so you can start from the last item 
-// decrement the loop
-// push the results to the new array  
+| Reverse-an-Array       |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
+| array-shift       |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
+| array-binary-search        |    [link](https://marwan-zakia.github.io/reading-note/read02.md)     |
