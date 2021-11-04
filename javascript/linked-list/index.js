@@ -1,7 +1,27 @@
 'use strict';
 
-class LinkedList {
+const LinkedList = require('./linklist');
+const ll = new LinkedList();
 
-}
+// ll.insert(1);
+// ll.insert(2);
+// ll.insert(3);
+// ll.insert(4);
+// ll.insert(5);
+// ll.insert(6);
+// ll.insert(7);
+// ll.insert(8);
+// ll.insert(9);
+// ll.insert(10);
 
-module.exports = LinkedList;
+
+// console.log(ll.insert(1),
+// ll.insert(2),
+// ll.insert(3),
+// ll.insert(4),
+// ll.insert(5),
+// ll.insert(6),
+// ll.insert(7),
+// ll.insert(8),
+// ll.insert(9),
+// ll.insert(10));
