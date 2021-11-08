@@ -78,22 +78,36 @@ it('Will return true when finding a value within the linked list that exists', (
     
     expect(ll.to_string()).toEqual('head{1} -> {3} -> {2} -> {5} -> X')
   })
+  
+   // head -> [1] -> [3] -> [2] -> X	3, 5	head -> [1] -> [5] -> [3] -> [2] -> X
   it('it adds a new node before the last node', () => {
     const ll = new LinkedList();
     ll.insert(1)
-    ll.insert(2)
     ll.insert(3)
-    ll.insertBefore(5,2)
-    expect(ll.to_string()).toEqual('head{1} -> {5} -> {2} -> {3} -> X')
+    ll.insert(2)
+    ll.insertBefore(3,5)
+    expect(ll.to_string()).toEqual('head{1} -> {5} -> {3} -> {2} -> X')
   
   })
   it('it adds a new node after the last node', () => {
     const ll = new LinkedList();
     ll.insert(1)
-    ll.insert(2)
     ll.insert(3)
-    ll.insertAfter(5,2)
-    expect(ll.to_string()).toEqual('head{1} -> {5} -> {2} -> {3} -> X')
+    ll.insert(2)
+    ll.insertAfter(2,5)
+    // head -> [1] -> [3] -> [2] -> X   	2, 5	   head -> [1] -> [3] -> [2] -> [5] -> X
+    expect(ll.to_string()).toEqual('head{1} -> {3} -> {2} -> {5} -> X')
+  })
+  
+  it('it adds a new node after the last node', () => {
+    const ll = new LinkedList();
+    ll.insert(1)
+    ll.insert(3)
+    ll.insert(8)
+    ll.insert(2)
+    //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
+    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
+    expect(ll.kthFromEnd(0)).toEqual(2)
   })
   
   

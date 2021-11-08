@@ -61,35 +61,84 @@ class LinkedList {
 
     }
 
-
-    insertBefore(value, newValue) {
-        let currentNode = this.head;
-        if (currentNode.value === newValue) {
-            this.insert(value)
+    insertBefore(location, newValue) {
+        if (!this.head) {
+            return null
         }
-        else {
-            while (currentNode.next.value !== newValue) {
-                currentNode = currentNode.value
+        let newNode = new Node(newValue)
+        let currentNode = this.head;
+        if (currentNode.value === location) {
+            newNode.next = this.head;
+            this.head = newNode
+            this.length++
+            return true
+        }
+        while (currentNode.next !== null) {
+            if (currentNode.next.value === location) {
+                newNode.next = currentNode.next
+                currentNode.next = newNode
+                this.length++
+                return true
+            }
+            currentNode = currentNode.next
+        }
+        return false
+
+    }
+    insertAfter(location, newValue) {
+        let newNode = new Node(newValue)
+        let currentNode = this.head
+        this.tail = this.head
+        while (currentNode) {
+            if (currentNode.value === location) {
+                this.tail = currentNode.next;
+                currentNode.next = newNode
+                currentNode.next.next = this.tail
+                this.length++
+                return this
+            }
+            else {
+                this.tail = this.tail.next
+                currentNode = currentNode.next
             }
         }
-        let temp = new Node(value)
-        temp.next = currentNode.next
-        currentNode.next = temp
+        return this
     }
-    insertAfter(value, newValue) {
-        let currentNode = this.head;
-        while (currentNode.next.value !== newValue) {
-            currentNode = currentNode.next;
+
+    kthFromEnd(k) {
+        let currentNode = this.head
+        let newNode = this.head
+         this.length = 0
+        while (currentNode) {
+            if (this.length > k) {
+                newNode = newNode.next
+            }
+            currentNode = currentNode.next
+            this.length++
+            
         }
-        let temp = new Node(value)
-        temp.next = currentNode.next
-        currentNode.next = temp
-
-
-
+        return newNode.value
+      
+        
+        
     }
-
+   
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = LinkedList;
