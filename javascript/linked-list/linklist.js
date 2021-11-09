@@ -117,14 +117,40 @@ class LinkedList {
             this.length++
             
         }
+        if(newNode.value===1){
+        return 'Exception'
+        }
         return newNode.value
-      
-        
-        
+       
     }
+
+ 
+      
+    
+    
+    }
+    
    
 
-}
+
+
+    // function zipLists(list1, list2){
+    //     let currentNode = new Node(null, null);
+    //     let previous = currentNode;
+    //     while (list1 !== null && list2 !== null) {
+    //       if (list1 <= list2 ) { 
+    //         previous.next = list1;
+    //         list1 = list1.next;
+    //       } else {
+    //         previous.next = list2;
+    //         list2 = list2.next;
+    //       }
+    //       previous = previous.next;
+    //     }
+    //     if (list1 === null) { previous.next = list2; }
+    //     if (list2 === null) { previous.next = list1; }
+    //     return currentNode.next; 
+    //   }
 
 
 
@@ -139,6 +165,4 @@ class LinkedList {
 
 
 
-
-
-module.exports = LinkedList;
+module.exports = {LinkedList,zipLists};

@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../linklist');
+const {LinkedList,zipLists} = require('../linklist');
 
 describe('Linked List', () => {
   it('works', () => {
@@ -107,12 +107,41 @@ it('Will return true when finding a value within the linked list that exists', (
     ll.insert(2)
     //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
     //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
-    expect(ll.kthFromEnd(0)).toEqual(2)
+    expect(ll.kthFromEnd(2)).toEqual(3)
   })
+  it('it adds a new node after the last node', () => {
+    const ll = new LinkedList();
+    ll.insert(1)
+    //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
+    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
+    expect(ll.kthFromEnd(0)).toEqual('Exception')
+  })
+//   it('it adds a new node after the last node', () => {
+//     let ll = new LinkedList();
+//     let  ll2 = new LinkedList();
+//     ll.insert(1)
+//     ll.insert(3)
+//     ll.insert(2)
+//     ll2.insert(5)
+//     ll2.insert(9)
+//     ll2.insert(4)
+//     zipLists(ll, ll2)
+//     //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
+//     //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
+//     // head -> [1] -> [5] -> [3] -> [9] -> [2] -> [4] -> X
+//     // head -> [1] -> [3] -> [2] -> X	head -> [5] -> [9] -> [4] -> X
+//  let newlist= zipLists(ll,ll2)
+//  console.log(newlist)
+//  newlist=new LinkedList()
+//  console.log(newlist)
+//  expect(ll.kthFromEnd(0)).toEqual('Exception')
+//   })
   
   
   
   
+  
+
   
   
 
