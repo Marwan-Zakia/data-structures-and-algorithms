@@ -108,49 +108,24 @@ class LinkedList {
     kthFromEnd(k) {
         let currentNode = this.head
         let newNode = this.head
-         this.length = 0
+        this.length = 0
         while (currentNode) {
             if (this.length > k) {
                 newNode = newNode.next
             }
             currentNode = currentNode.next
             this.length++
-            
+
         }
-        if(newNode.value===1){
-        return 'Exception'
+        if (newNode.value === 1) {
+            return 'Exception'
         }
         return newNode.value
-       
+
     }
 
- 
-      
-    
-    
-    }
-    
-   
 
-
-
-    // function zipLists(list1, list2){
-    //     let currentNode = new Node(null, null);
-    //     let previous = currentNode;
-    //     while (list1 !== null && list2 !== null) {
-    //       if (list1 <= list2 ) { 
-    //         previous.next = list1;
-    //         list1 = list1.next;
-    //       } else {
-    //         previous.next = list2;
-    //         list2 = list2.next;
-    //       }
-    //       previous = previous.next;
-    //     }
-    //     if (list1 === null) { previous.next = list2; }
-    //     if (list2 === null) { previous.next = list1; }
-    //     return currentNode.next; 
-    //   }
+}
 
 
 
@@ -165,4 +140,40 @@ class LinkedList {
 
 
 
-module.exports = {LinkedList,zipLists};
+// function zipLists(list1, list2){
+//     let currentNode = new Node(0);
+//     let previous = currentNode;
+// let ll= list1.head
+// let ll2= list2.head
+
+//     while (list1 !== null && list2 !== null) {
+//         previous.next = list1;
+//         list1 = list1.next;
+//  
+//         previous.next = list2;
+//         list2 = list2.next;
+//       }
+//      
+//     
+//     if (list1 !== null) { previous.next = list1; }
+//     if (list2 !== null) { previous.next = list2; }
+//     list1=currentNode.next
+//list1.length=list1.length+list2.length
+//return list1
+//   }
+//t0n  S0n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = LinkedList;
