@@ -1,7 +1,7 @@
 'use strict';
 
-const LinkedList = require('./linklist');
-const ll = new LinkedList();
+// const LinkedList = require('./linklist');
+// const ll = new LinkedList();
 
 // ll.insert(1);
 // ll.insert(2);

@@ -108,21 +108,50 @@ class LinkedList {
     kthFromEnd(k) {
         let currentNode = this.head
         let newNode = this.head
-         this.length = 0
+        this.length = 0
         while (currentNode) {
             if (this.length > k) {
                 newNode = newNode.next
             }
             currentNode = currentNode.next
             this.length++
-            
+        }
+        if (newNode.value === 1) {
+            return 'Exception'
         }
         return newNode.value
-      
-        
-        
+
     }
-   
+}
+    function zipLists(list1, list2) {
+        let headPointer = new Node(null);
+        //assign a new var headpointer to an new node with a value of null
+        let currentNode = headPointer;
+        //create a new var currentNode to store the headpointer
+        let ll = list1.head;
+        //create a ll var to store the head of the first list
+        let ll2 = list2.head;
+        //create a ll2 var to store the head of the second list
+        while (ll !== null && ll2 !== null) {
+        // we did this loop to 
+          currentNode.next = ll;
+          // store the first list in next value of the currentNode
+          ll = ll.next;
+          
+          currentNode = currentNode.next;
+          // and the next value of the currentNode in the currentNode
+          currentNode.next = ll2;
+          //then we start inserting nodes from second list
+          ll2 = ll2.next;
+        //store the second node 
+          currentNode = currentNode.next;
+          //change the storde value back into the currentNode
+        }
+        return list1;
+ //then return the merged first list
+
+    
+
 
 }
 
@@ -140,5 +169,4 @@ class LinkedList {
 
 
 
-
-module.exports = LinkedList;
+module.exports =  {LinkedList,zipLists};
