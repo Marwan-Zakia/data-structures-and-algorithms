@@ -1,7 +1,8 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../linklist');
+const {LinkedList,zipLists} = require('../linklist');
+
 
 describe('Linked List', () => {
   it('works', () => {
@@ -79,7 +80,6 @@ describe('Linked List', () => {
     expect(ll.to_string()).toEqual('head{1} -> {3} -> {2} -> {5} -> X')
   })
 
-  // head -> [1] -> [3] -> [2] -> X	3, 5	head -> [1] -> [5] -> [3] -> [2] -> X
   it('it adds a new node before the last node', () => {
     const ll = new LinkedList();
     ll.insert(1)
@@ -95,69 +95,34 @@ describe('Linked List', () => {
     ll.insert(3)
     ll.insert(2)
     ll.insertAfter(2, 5)
-    // head -> [1] -> [3] -> [2] -> X   	2, 5	   head -> [1] -> [3] -> [2] -> [5] -> X
     expect(ll.to_string()).toEqual('head{1} -> {3} -> {2} -> {5} -> X')
   })
 
-  it('it adds a new node after the last node', () => {
+  it('kthFromEnd', () => {
     const ll = new LinkedList();
     ll.insert(1)
     ll.insert(3)
     ll.insert(8)
     ll.insert(2)
-    //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
-    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
     expect(ll.kthFromEnd(2)).toEqual(3)
   })
-  it('it adds a new node after the last node', () => {
+  it('kthFromEnd', () => {
     const ll = new LinkedList();
     ll.insert(1)
-    //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
-    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
     expect(ll.kthFromEnd(0)).toEqual('Exception')
   })
-  it('it adds a new node after the last node', () => {
-    const ll = new LinkedList();
-    ll.append(1)
-    ll.append(2)
-    ll.append(3)
-    ll.reverse()
-    // head->[3]->[2]->[1]
-    // head->['a']->['b']->['c']
-    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
-    expect(ll.to_string()).toEqual('head{3}-> {2} -> {1} -> X')
-  })
-  it('it adds a new node after the last node', () => {
-    const ll = new LinkedList();
-    ll.insert(1)
-    //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
-    //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
-    expect(ll.kthFromEnd(0)).toEqual('Exception')
-  })
-  //   it('it adds a new node after the last node', () => {
-  //     let ll = new LinkedList();
-  //     let  ll2 = new LinkedList();
-  //     ll.insert(1)
-  //     ll.insert(3)
-  //     ll.insert(2)
-  //     ll2.insert(5)
-  //     ll2.insert(9)
-  //     ll2.insert(4)
-  //     zipLists(ll, ll2)
-  //     //head -> [1] -> [3] -> [8] -> [2] -> X	       0	            2
-  //     //head -> [1] -> [3] -> [8] -> [2] -> X	2	   3
-  //     // head -> [1] -> [5] -> [3] -> [9] -> [2] -> [4] -> X
-  //     // head -> [1] -> [3] -> [2] -> X	head -> [5] -> [9] -> [4] -> X
-  //  let newlist= zipLists(ll,ll2)
-  //  console.log(newlist)
-  //  newlist=new LinkedList()
-  //  console.log(newlist)
-  //  expect(ll.kthFromEnd(0)).toEqual('Exception')
-  //   })
-
-
-
-
+ it('merging two lists', () => {
+  let ll = new LinkedList();
+let ll2 = new LinkedList();
+  ll.insert(1)
+  ll.insert(3)
+  ll.insert(2)
+  ll2.insert(5)
+  ll2.insert(9)
+  ll2.insert(4)
+ zipLists(ll, ll2)
+expect(ll.to_string()).toBe('head{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> X')
+})
 
 
 
