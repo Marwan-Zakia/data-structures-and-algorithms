@@ -1,7 +1,6 @@
 const Node = require('./Node');
 
 class Queue {
-
   constructor() {
     this.front = null;
     this.rear = null;
@@ -10,7 +9,6 @@ class Queue {
 
   enqueue(value) {
     const newNode = new Node(value);
-
     if (this.isEmpty()) {
       this.front = newNode;
       this.rear = newNode;
@@ -45,6 +43,11 @@ class Queue {
   isEmpty() {
     return this.length === 0;
   }
+  
+
+
+
+
 
 }
 

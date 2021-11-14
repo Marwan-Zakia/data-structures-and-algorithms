@@ -1,6 +1,6 @@
 
 
-const Stack = require('../Stack');
+const {Stack,PseudoQueue} = require('../Stack');
 const Queue = require('../Queue');
 
 
@@ -100,7 +100,7 @@ describe('Stack', () => {
     const queue = new Queue();
    queue.enqueue(1)
    queue.enqueue(2)
-   queue.dequeue(2)
+   queue.dequeue()
     expect(queue).toBeDefined();
     expect(queue.rear.value).toBe(2);
   });
@@ -117,9 +117,9 @@ describe('Stack', () => {
    queue.enqueue(1)
    queue.enqueue(2)
    queue.enqueue(2)
-   queue.dequeue(1)
-   queue.dequeue(2)
-   queue.dequeue(2)
+   queue.dequeue()
+   queue.dequeue()
+   queue.dequeue()
    queue.isEmpty()
     expect(queue).toBeDefined();
     expect(queue).toBeTruthy();
@@ -129,13 +129,55 @@ describe('Stack', () => {
    queue.enqueue(1)
    queue.enqueue(2)
    queue.enqueue(2)
-   queue.dequeue(1)
-   queue.dequeue(2)
-   queue.dequeue(2)
- 
-   
+   queue.dequeue()
+   queue.dequeue()
+   queue.dequeue()
     expect(queue.peek()).toBe('exception');
   });
+  it('Can successfully enqueue into a Pseudo queue', () => {
+    const queue = new PseudoQueue();
+   queue.enqueue(10)
+   queue.enqueue(15)
+   queue.enqueue(20)
+   queue.enqueue(5)
+  //  [10]->[15]->[20]
+    expect(queue.rear.top.value).toBe(5);
+  });
+  it('Can successfully cheak if the queue is empty', () => {
+    const queue = new PseudoQueue();
+    expect(queue.isEmpty()).toBeFalsy();
+  });
+  it('Can successfully enqueue into a Pseudo queue to be wrong', () => {
+    const queue = new PseudoQueue();
+   queue.enqueue(10)
+   queue.enqueue(15)
+   queue.enqueue(20)
+   queue.enqueue(5)
+  //  [10]->[15]->[20]
+    expect(queue.rear.top.value).not.toBe(10);
+  });
+  
+  it('Calling PseudoQueue dequeue to be truthy  ', () => {
+    const queue = new PseudoQueue();
+    queue.enqueue(5)
+   queue.enqueue(10)
+   queue.enqueue(15)
+   queue.enqueue(20)
+  //  console.log(queue.rear.top.value)
+  queue.dequeue()
+  //  [5]->[10]->[15]->{[20]x}queue.rear.top.value
+    expect(queue.rear.top.value).toBe(15);
+  });
+  it('Calling PseudoQueue dequeue to be wrong  ', () => {
+    const queue = new PseudoQueue();
+    queue.enqueue(5)
+   queue.enqueue(10)
+   queue.enqueue(15)
+   queue.enqueue(20)
+  queue.dequeue()
+    expect(queue.rear.top.value).not.toBe(20);
+  });
+  
   
   
 // Can successfully push onto a stack--
