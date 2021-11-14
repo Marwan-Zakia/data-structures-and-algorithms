@@ -52,5 +52,48 @@ class Stack {
   }
 }
 
+class PseudoQueue{
+constructor(){
+this.front = new Stack ();
+this.rear = new Stack ();
+this.length = 0
+}
 
-module.exports = Stack;
+enqueue(value) {
+//what we basiclly did is to extensient a queue form a stack
+if (this.isEmpty()) {
+  console.log('The queue is Empty');
+  return false;
+}
+this.rear.push(value)
+this.length++;
+return this
+}
+dequeue() {
+  if (this.isEmpty()) {
+    console.log('The queue is Empty');
+    return false;
+  }
+  const temp = this.rear.top;
+  this.rear.top = this.rear.top.next;
+  temp.next = null;
+  this.length -= 1;
+  return temp.value;
+
+}
+
+  // const temp = this.front;
+  // this.front = this.front.next;
+  // temp.next = null;
+  // this.length -= 1;
+  // return temp.value;
+  isEmpty() {
+    return this.top === null;
+}  
+
+
+
+}
+
+
+module.exports = {Stack,PseudoQueue};
