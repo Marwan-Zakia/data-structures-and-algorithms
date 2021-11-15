@@ -13,5 +13,18 @@
 
 [x] Calling PseudoQueue dequeue to be wrong
 
+[x] Can successfully add an animal
+
+[x] Can unsuccessfully add an animal
+
+[x] Can successfully dequeue an animal
+
+[x] Can unsuccessfully dequeue an animal
+
+
+
 # whiteboard
+## AnimalShelter
+![animal](animal.png)
+## psuedo
 ![psuedo](psuedo.png)
