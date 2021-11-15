@@ -43,13 +43,33 @@ class Queue {
   isEmpty() {
     return this.length === 0;
   }
-  
+
 
 
 
 
 
 }
+class AnimalShelter extends Queue {
+  enQueue(value) {
+if (value === 'cat'||value === 'dog') {
+  this.enqueue(value)
+}
+else{return 'please add a dog or a cat';}
+}
+
+deQueue(pref){
+  if (pref === 'cat'||pref === 'dog') {
+    return this.dequeue(pref)
+  }
+  else if (pref !== 'cat'||pref !== 'dog'){
+  return null
+  }
+  else{return 'please select a dog or a cat';}
+
+}
 
 
-module.exports = Queue;
+}
+
+module.exports = {Queue,AnimalShelter};

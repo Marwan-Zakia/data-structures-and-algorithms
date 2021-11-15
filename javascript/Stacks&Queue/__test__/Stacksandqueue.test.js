@@ -1,7 +1,7 @@
 
 
 const {Stack,PseudoQueue} = require('../Stack');
-const Queue = require('../Queue');
+const {Queue,AnimalShelter} = require('../Queue');
 
 
 describe('Stack', () => {
@@ -177,6 +177,38 @@ describe('Stack', () => {
   queue.dequeue()
     expect(queue.rear.top.value).not.toBe(20);
   });
+  
+  it('Can successfully add an animal', () => {
+    const queue = new AnimalShelter();
+   queue.enQueue('dog')
+   queue.enQueue('cat')
+    expect(queue).toBeDefined();
+    expect(queue.rear.value).toBe('cat');
+  });
+  it('Can unsuccessfully add an animal', () => {
+    const queue = new AnimalShelter();
+    expect(queue).toBeDefined();
+    expect(queue.enQueue('frankie')).toBe('please add a dog or a cat');
+  });
+  
+  it('Can successfully dequeue an animal', () => {
+    const queue = new AnimalShelter();
+    queue.enQueue('dog')
+    queue.enQueue('cat')
+    queue.deQueue('dog')
+    expect(queue).toBeDefined();
+    expect(queue.rear.value).toBe('cat');
+  });
+  
+  it('Can unsuccessfully dequeue an animal', () => {
+    const queue = new AnimalShelter();
+    queue.enQueue('dog')
+    expect(queue).toBeDefined();
+    expect(queue.deQueue('bat')).toBeFalsy();
+  });
+
+  
+  
   
   
   
