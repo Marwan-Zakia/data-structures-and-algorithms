@@ -2,6 +2,7 @@
 
 const {Stack,PseudoQueue} = require('../Stack');
 const {Queue,AnimalShelter} = require('../Queue');
+const multiBrackets= require('../Bracket');
 
 
 describe('Stack', () => {
@@ -195,9 +196,9 @@ describe('Stack', () => {
     const queue = new AnimalShelter();
     queue.enQueue('dog')
     queue.enQueue('cat')
-    queue.deQueue('dog')
+    queue.deQueue()
     expect(queue).toBeDefined();
-    expect(queue.rear.value).toBe('cat');
+    expect(queue.front.value).toBe('dog');
   });
   
   it('Can unsuccessfully dequeue an animal', () => {
@@ -206,8 +207,27 @@ describe('Stack', () => {
     expect(queue).toBeDefined();
     expect(queue.deQueue('bat')).toBeFalsy();
   });
-
   
+  it('multiBrackets toBeTruthy', () => {
+    expect(multiBrackets('{}(){}')).toBeTruthy();
+  });
+  
+  it('multiBrackets toBeTruthy', () => {
+    expect(multiBrackets('{}{Code}[Fellows](())')).toBeTruthy();
+  });
+  
+  it('multiBrackets toBeFalsy', () => {
+    expect(multiBrackets('(](')).toBeFalsy();
+  });
+  
+  it('multiBrackets toBeFalsy', () => {
+    expect(multiBrackets('{(})')).toBeFalsy();
+  });
+  
+  it('multiBrackets toBeFalsy', () => {
+    expect(multiBrackets('[({}]')).toBeFalsy();
+  });
+ 
   
   
   
