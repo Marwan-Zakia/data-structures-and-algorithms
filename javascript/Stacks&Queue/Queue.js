@@ -60,7 +60,7 @@ else{return 'please add a dog or a cat';}
 
 deQueue(pref){
   if (pref === 'cat'||pref === 'dog') {
-    return this.dequeue(pref)
+    return this.dequeue 
   }
   else if (pref !== 'cat'||pref !== 'dog'){
   return null
