@@ -24,6 +24,17 @@ function multiBrackets(str) {
     }
 return true;
 }
+const stack = new Stack();
+stack.push(1)
+stack.push(2)
+stack.push(6)
+stack.push(90)
+console.log(stack.getMax());
+
+
+
+
+
 
 module.exports = multiBrackets
 

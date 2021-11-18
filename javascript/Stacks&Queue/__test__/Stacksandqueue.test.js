@@ -228,6 +228,27 @@ describe('Stack', () => {
     expect(multiBrackets('[({}]')).toBeFalsy();
   });
  
+  it('find the maximum value', () => {
+    const stack = new Stack();
+    stack.push(1)
+    stack.push(2)
+    stack.push(6)
+    stack.push(90)
+    expect(stack).toBeDefined();
+    expect(stack.getMax()).toBe(90);
+  });
+  it('find the minimum value', () => {
+    const stack = new Stack();
+    stack.push(1)
+    stack.push(2)
+    stack.push(6)
+    stack.push(90)
+    expect(stack).toBeDefined();
+    expect(stack.getMin()).toBe(1);
+  });
+  
+  
+  
   
   
   

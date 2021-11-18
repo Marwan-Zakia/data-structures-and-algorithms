@@ -1,13 +1,10 @@
 const Node = require('./Node');
 
-
 class Stack {
-
   constructor() {
     this.top = null;
     this.length = 0;
   }
-
   push(value) {
 
     if (this.isEmpty()) { 
@@ -22,7 +19,6 @@ class Stack {
     }
 
   }
-
   pop() {
 
     if (this.isEmpty()) {
@@ -35,21 +31,62 @@ class Stack {
     temp.next = null; 
     return temp.value;
   }
-
-  
   peek() {
     if (this.isEmpty()) {
       return 'exception'
     }
     return this.top.value;
   }
-
-
   isEmpty() {
-   
- 
     return this.top === null;
   }
+  getMax(){
+    if (this.isEmpty()) {
+      console.log('No Nodes are left in your stack');
+      return false;
+    }
+    let current = this.top;
+    let max = this.top.value;
+    while(current){
+      if(current.value > max){
+        max = current.value;
+      }
+      current = current.next;
+    }
+    return max;
+    
+  }
+  getMax(){
+    if (this.isEmpty()) {
+      console.log('No Nodes are left in your stack');
+      return false; }
+    let current = this.top;//node
+    let max = this.top.value;//step1 ==90
+    while(current){ 
+      if(current.value > max){
+        max = current.value;
+      }
+      current = current.next;
+    }
+    return max; 
+  }
+  getMin(){
+    if (this.isEmpty()) {
+      console.log('No Nodes are left in your stack');
+      return false;
+    }
+    let current = this.top;
+    let min = this.top.value;
+    while(current){ 
+      if(current.value < min){
+        min = current.value;
+      }
+      current = current.next;
+    }
+    return min; 
+  }
+
+
 }
 
 class PseudoQueue{
@@ -60,7 +97,7 @@ this.length = 0
 }
 
 enqueue(value) {
-//what we basiclly did is to extensient a queue form a stack
+
 if (this.isEmpty()) {
   console.log('The queue is Empty');
   return false;
@@ -70,28 +107,15 @@ this.length++;
 return this
 }
 dequeue() {
-  if (this.isEmpty()) {
-    console.log('The queue is Empty');
-    return false;
-  }
   const temp = this.rear.top;
   this.rear.top = this.rear.top.next;
   temp.next = null;
   this.length -= 1;
   return temp.value;
-
 }
-
-  // const temp = this.front;
-  // this.front = this.front.next;
-  // temp.next = null;
-  // this.length -= 1;
-  // return temp.value;
   isEmpty() {
     return this.top === null;
 }  
-
-
 
 }
 
