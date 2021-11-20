@@ -95,7 +95,6 @@ class BST {
                 }
                 _recourse(node.right);
             }
-
         }
         _recourse(this.root);
         return newNode;
@@ -106,19 +105,19 @@ class BST {
 
     Contains(value) {
         let currentNode = this.root
-        if (currentNode.value === value) {
-         return true;
-        }
-        while (currentNode.value === value) {
-            if (currentNode.value < value) {
+        while (currentNode) {
+            if (currentNode.value === value) {
+             return true;
+            }
+            if (currentNode.value > value) {
                 currentNode = currentNode.left
             }
-            else if (currentNode.value > value) {
+            else  {
                 currentNode = currentNode.right
                 
             }
         }
-         return true 
+         return false 
     }
     isEmpty() {
         return this.root === null
