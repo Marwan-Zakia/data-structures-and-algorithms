@@ -110,10 +110,3 @@ it('Can successfully push onto a bst', () => {
     expect(bst.getMax()).toBe(105)
   });
   
-
-
-
-
-  // let BT = new Tree();
-  // BT.root = new Node(2, new Node(7, new Node(2), new Node(6,new Node(5,new Node(11)))), new Node(5, new Node(9), new Node(4)));
-  // console.log(BT.BeardthFirst())
