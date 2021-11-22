@@ -85,7 +85,28 @@ class Tree {
         _recourse(this.root);
         return max
     }
-
+    BeardthFirst(tree){
+    if (this.isEmpty()){
+    return 'there is nothing'
+    }
+        let newArr = []
+        let secondArr = []
+        secondArr.push(tree.root)
+        while(secondArr.length > 0){
+            let currentNode = secondArr.shift()
+            if(currentNode.left)secondArr.push(currentNode.left)
+            if(currentNode.right)secondArr.push(currentNode.right)
+            newArr.push(currentNode.value)
+            
+        }
+       
+        return newArr;
+    }
+        
+    
+    
+    
+    
 }
 class BST {
     constructor() {
