@@ -85,13 +85,14 @@ class Tree {
         _recourse(this.root);
         return max
     }
-    BeardthFirst(tree){
+    
+    BeardthFirst(){
     if (this.isEmpty()){
     return 'there is nothing'
     }
         let newArr = []
         let secondArr = []
-        secondArr.push(tree.root)
+        secondArr.push(this.root)
         while(secondArr.length > 0){
             let currentNode = secondArr.shift()
             if(currentNode.left)secondArr.push(currentNode.left)
@@ -102,7 +103,30 @@ class Tree {
        
         return newArr;
     }
-        
+     FizzBuzz(tree) {
+        let newArr = [];
+        let arg =tree
+        let currentNode =arg.root;
+        if (this.isEmpty()) return 'there is nothing'; 
+        newArr.push(currentNode)
+        while(newArr.length>0){
+            currentNode= newArr.pop()
+            if (currentNode.value% 3 == 0 && currentNode.value % 5 == 0) {
+                currentNode.value = "FizzBuzz";
+            }
+             else if (currentNode.value % 3 == 0) currentNode.value = "Fizz";
+            
+             else if (currentNode.value % 5 == 0) currentNode.value = "Buzz";
+             
+              else if (currentNode.value% 3 !== 0 && currentNode.value % 5 !== 0) {
+                currentNode.value = `${currentNode.value}`;
+            }
+        if(currentNode.left) newArr.push(currentNode.left)
+        if(currentNode.right) newArr.push(currentNode.right)
+
+    }
+        return arg;
+    }
     
     
     

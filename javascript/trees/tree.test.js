@@ -67,6 +67,15 @@ it('Can successfully return a collection from a Beardth First traversal', () => 
   expect(BT).toBeDefined();
   expect(BT.BeardthFirst(BT)).toStrictEqual([2,7,5,2,6,9]);
 });
+it('Can successfully find if a number is a fuzz or a buzz or fizzBuzz', () => {
+  let BT = new Tree();
+  BT.root = new Node(2, new Node(15, new Node(2), new Node(6)), new Node(5, new Node(9)));
+  let FB=BT.FizzBuzz(BT)
+  let FB2=FB.preOder()
+  expect(BT).toBeDefined();
+  expect(FB2).toStrictEqual(['2','FizzBuzz','2','Fizz','Buzz','Fizz']);
+});
+
 
 it('Can successfully instantiate an empty BSt', () => {
   let bst = new BST();
