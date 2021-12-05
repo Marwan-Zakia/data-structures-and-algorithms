@@ -57,6 +57,11 @@ it('Can unsuccessfully return the Maximum value in the tree', () => {
   BT.root = new Node(2, new Node(7, new Node(2), new Node(6,new Node(5,new Node(11)))), new Node(5, new Node(9), new Node(4)));
   expect(BT.getMax()).not.toBe(5);
 });
+// it('Can unsuccessfully return the Maximum value in the tree', () => {
+//   let BT = new Tree(); 
+//   BT.root = new Node(8, new Node(3, new Node(1), new Node(6,new Node(4,new Node(7)))), new Node(10, new Node(14), new Node(13)));
+//   expect(BT.sum()).toBe(24);
+// });
 it('test the is empty', () => {
   let BT = new Tree();
   expect(BT.root).toBeFalsy();
@@ -71,10 +76,14 @@ it('Can successfully find if a number is a fuzz or a buzz or fizzBuzz', () => {
   let BT = new Tree();
   BT.root = new Node(2, new Node(15, new Node(2), new Node(6)), new Node(5, new Node(9)));
   let FB=BT.FizzBuzz(BT)
-  let FB2=FB.preOder()
+  // let FB2=FB.preOder()
   expect(BT).toBeDefined();
-  expect(FB2).toStrictEqual(['2','FizzBuzz','2','Fizz','Buzz','Fizz']);
+  expect(FB).toStrictEqual(['2','FizzBuzz','2','Fizz','Buzz','Fizz']);
 });
+
+
+
+
 
 
 it('Can successfully instantiate an empty BSt', () => {
@@ -118,4 +127,20 @@ it('Can successfully push onto a bst', () => {
     bst.add(105)
     expect(bst.getMax()).toBe(105)
   });
-  
+  it('sum', () => {
+    let bst = new BST();
+    bst.add(8)
+    bst.add(3)
+    bst.add(1)
+    bst.add(6)
+    bst.add(4)
+    bst.add(7)
+    bst.add(10)
+    bst.add(14)
+    bst.add(13)
+    expect(bst.sum()).toBe(24)
+  });
+ 
+  // let BT = new Tree();
+  // BT.root = new Node(1, new Node(4, new Node(7), new Node(2)), new Node(3, new Node(9), new Node(6)));
+  // console.log(BT.root)
