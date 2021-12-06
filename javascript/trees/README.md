@@ -1,10 +1,10 @@
+# FizzBuzz
+![FizzBuzz](FizzBuzz.PNG)
 # tree-breadth-first
 ![BTF](BTF1.png)
 
-
 # Max value
 ![max](max.png)
-
 
 # TREES and BINERY SERCH TREE 
 

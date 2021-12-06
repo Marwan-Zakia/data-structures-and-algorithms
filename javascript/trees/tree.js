@@ -85,33 +85,78 @@ class Tree {
         _recourse(this.root);
         return max
     }
-    BeardthFirst(tree){
-    if (this.isEmpty()){
-    return 'there is nothing'
-    }
+
+    BeardthFirst() {
+        if (this.isEmpty()) {
+            return 'there is nothing'
+        }
         let newArr = []
         let secondArr = []
-        secondArr.push(tree.root)
-        while(secondArr.length > 0){
+        secondArr.push(this.root)
+        while (secondArr.length > 0) {
             let currentNode = secondArr.shift()
-            if(currentNode.left)secondArr.push(currentNode.left)
-            if(currentNode.right)secondArr.push(currentNode.right)
+            if (currentNode.left) secondArr.push(currentNode.left)
+            if (currentNode.right) secondArr.push(currentNode.right)
             newArr.push(currentNode.value)
-            
+
         }
-       
+
         return newArr;
     }
-        
-    
-    
-    
-    
-}
-class BST {
-    constructor() {
-        this.root = null;
+    FizzBuzz(tree) {
+        let newArr = []
+        let result = tree.root;
+        let _recourse =(node) => {
+          if (node !== null) {
+            if (node.value % 3 === 0 && node.value % 5 === 0) {
+                newArr.push( result="FizzBuzz")
+            } else if (node.value % 3 === 0) {
+                newArr.push( result="Fizz")
+            } else if (node.value % 5 === 0) {
+                 newArr.push(result="Buzz");
+            } else {
+                newArr.push( result=(node.value.toString()))
+            }
+            _recourse(node.left);
+            _recourse(node.right);
+          }
+        };
+        _recourse(tree.root);
+        return newArr;
+
+     //the old way
+        // let newArr = [];
+        // let arg = tree
+        // let currentNode = arg.root;
+        // if (this.isEmpty()) return 'there is nothing';
+        // newArr.push(currentNode)
+        // while (newArr.length > 0) {
+        //     currentNode = newArr.pop()
+        //     if (currentNode.value % 3 == 0 && currentNode.value % 5 == 0) {
+        //         currentNode.value = "FizzBuzz";
+        //     }
+        //     else if (currentNode.value % 3 == 0) currentNode.value = "Fizz";
+
+        //     else if (currentNode.value % 5 == 0) currentNode.value = "Buzz";
+
+        //     else if (currentNode.value % 3 !== 0 && currentNode.value % 5 !== 0) {
+        //         currentNode.value = `${currentNode.value}`;
+        //     }
+        //     if (currentNode.left) newArr.push(currentNode.left)
+        //     if (currentNode.right) newArr.push(currentNode.right)
+
+        // }
+        // return arg;
     }
+
+
+
+
+}
+class BST extends Tree {
+    // constructor() {
+    //     this.root = null;
+    // }
     add(value) {
         let newNode = new Node(value);
         if (!this.root) {
@@ -166,7 +211,17 @@ class BST {
         return this.root === null
     }
 
+    sum() {
+        let sum = 0
+        let newArr = this.preOder()
+        for (let i = 0; i < newArr.length; i++) {
+            if (newArr[i] % 2 == 1) {
+                sum += newArr[i]
+            }
+        }
+        return sum
 
+    }
 
 
 
