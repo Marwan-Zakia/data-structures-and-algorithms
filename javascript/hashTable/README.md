@@ -1,8 +1,16 @@
 # HASH TABLE
 
+## hashmap-leftjoin
+
+![leftjoin](leftjoin.PNG)
+
+
 ## hashmap-repeated-word
 
 ![repaeted](repaeted.PNG)
+
+
+
 
  [X] Successfully returns true that exists in the hashtable
 
