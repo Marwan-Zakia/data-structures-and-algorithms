@@ -30,6 +30,9 @@ class Hashtable {
         }
       }
     }
+    else{
+      return undefined
+    }
   }
   contains(key) {
     let index = this.getHash(key);
@@ -50,4 +53,4 @@ class Hashtable {
     return hash % this.size;
   }
 }
-module.exports = Hashtable;
+module.exports =  Hashtable;
