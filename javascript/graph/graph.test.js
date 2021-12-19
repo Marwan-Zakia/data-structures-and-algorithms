@@ -76,4 +76,24 @@ test("An empty graph properly returns null", () => {
   expect(graph.size()).toBe(0);
 });
 
-
+test("A graph can be properly traversed using breadth-first search", () => {
+  const graph = new Graph();
+  const vertex1 = new Vertex(1);
+  const vertex2 = new Vertex(2);
+  const vertex3 = new Vertex(3);
+  const vertex4 = new Vertex(4);
+  graph.addVertix(vertex1);
+  graph.addVertix(vertex2);
+  graph.addVertix(vertex3);
+  graph.addVertix(vertex4);
+  graph.addDirectedEdge(vertex1, vertex2);
+  graph.addDirectedEdge(vertex2, vertex3);
+  graph.addDirectedEdge(vertex3, vertex4);
+  graph.addDirectedEdge(vertex4, vertex1);
+  expect(graph.bfs(vertex1)).toEqual([
+    { value: 1 },
+    { value: 2 },
+    { value: 3 },
+    { value: 4 },
+  ]);
+});
