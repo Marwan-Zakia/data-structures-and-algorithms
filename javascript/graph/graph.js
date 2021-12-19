@@ -60,6 +60,29 @@ class Graph {
       console.log(vertex, edge);
     }
   }
-}
-module.exports = { Vertex, Edge, Graph };
 
+  bfs(startVertex) {
+    const visited = new Map();
+    const newQueue = [];
+    const queue = [];
+    queue.push(startVertex);
+    visited.set(startVertex, true);
+    newQueue.push(startVertex);
+    while (queue.length > 0) {
+      const current = queue.shift();
+      const neighbors = this.list.get(current);
+      for (let i = 0; i < neighbors.length; i++) {
+        if (!visited.has(neighbors[i].vertex)) {
+          visited.set(neighbors[i].vertex, true);
+          queue.push(neighbors[i].vertex);
+          newQueue.push(neighbors[i].vertex);
+        }
+      }
+    }
+    return newQueue;
+  }
+
+   
+}
+
+module.exports = { Vertex, Edge, Graph };
